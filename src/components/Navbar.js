@@ -209,7 +209,7 @@ export default function PrimarySearchAppBar () {
   return (
     <div className={classes.grow}>
       <AppBar
-        position="static"
+        position="fixed"
         classes={{
           colorPrimary: classes.colorPrimary
         }}
