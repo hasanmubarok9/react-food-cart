@@ -19,6 +19,7 @@ import Drawer from '@material-ui/core/Drawer'
 import List from '@material-ui/core/List'
 // import Divider from '@material-ui/core/Divider'
 import ListItem from '@material-ui/core/ListItem'
+import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 
 const useStyles = makeStyles(theme => ({
@@ -139,6 +140,9 @@ function PrimarySearchAppBar ({ addedItems }) {
   ) : (
     <List>
       <ListItem>
+        <ListItemIcon>
+          <ShoppingCartIcon/>
+        </ListItemIcon>
         <ListItemText>Cart is Empty</ListItemText>
       </ListItem>
     </List>
@@ -222,7 +226,7 @@ function PrimarySearchAppBar ({ addedItems }) {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            Foodpedia
+            Foodpedia panjangnya
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -240,7 +244,7 @@ function PrimarySearchAppBar ({ addedItems }) {
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <IconButton aria-label="show 2 new ShoppingCart" color="inherit">
-              <Badge badgeContent={2} color="secondary">
+              <Badge badgeContent={ addedItems.length ? addedItems.length : null} color="secondary">
                 <ShoppingCartIcon onClick={toggleDrawer('right', true)}/>
               </Badge>
             </IconButton>
