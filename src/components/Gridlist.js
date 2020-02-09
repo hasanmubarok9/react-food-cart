@@ -108,7 +108,7 @@ function TitlebarGridList ({ allProducts }) {
               title={tile.name}
               subtitle={<span>{tile.price}</span>}
               actionIcon={
-                <Tooltip title="Makanan dan Minuman">
+                <Tooltip title={tile.category}>
                   <IconButton aria-label={`info about ${tile.name}`} className={classes.icon}>
                     <InfoIcon />
                   </IconButton>
@@ -124,7 +124,7 @@ function TitlebarGridList ({ allProducts }) {
         </DialogTitle>
         <DialogContent productDetail={productDetail}/>
         <DialogActions>
-          <Button autoFocus onClick={handleClose} color="primary">
+          <Button autoFocus variant="contained" onClick={handleClose} color="secondary">
               Save changes
           </Button>
         </DialogActions>

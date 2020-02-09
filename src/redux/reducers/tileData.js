@@ -30,7 +30,7 @@ const tileData = [
     id: 1,
     img: image1,
     name: 'Nasi Briyani',
-    price: 'Rp.10.000',
+    price: 10000,
     category: 'Food and beverage',
     description: 'Good and Healthy Food',
     stock: 0
@@ -39,7 +39,7 @@ const tileData = [
     id: 2,
     img: image2,
     name: 'Coffe Berryl',
-    price: 'Rp.20.000',
+    price: 11000,
     category: 'Food and beverage',
     description: 'Good and Healthy Food',
     stock: 0
@@ -48,7 +48,7 @@ const tileData = [
     id: 3,
     img: image3,
     name: 'Starbucks Coffee',
-    price: 'Rp.30.000',
+    price: 12000,
     category: 'Food and beverage',
     description: 'Good and Healthy Food',
     stock: 0
@@ -57,7 +57,7 @@ const tileData = [
     id: 4,
     img: image4,
     name: 'Good Times',
-    price: 'Rp.40.000',
+    price: 13000,
     category: 'Food and beverage',
     description: 'Good and Healthy Food',
     stock: 0
@@ -66,7 +66,7 @@ const tileData = [
     id: 5,
     img: image5,
     name: 'Green Tea',
-    price: 'Rp.50.000',
+    price: 14000,
     category: 'Food and beverage',
     description: 'Good and Healthy Food',
     stock: 0
@@ -75,7 +75,7 @@ const tileData = [
     id: 6,
     img: image6,
     name: 'Greenfield milk',
-    price: 'Rp.60.000',
+    price: 15000,
     category: 'Food and beverage',
     description: 'Good and Healthy Food',
     stock: 0
@@ -84,7 +84,7 @@ const tileData = [
     id: 7,
     img: image7,
     name: 'Teh Melati',
-    price: 'Rp.70.000',
+    price: 16000,
     category: 'Food and beverage',
     description: 'Good and Healthy Food',
     stock: 0
@@ -93,7 +93,7 @@ const tileData = [
     id: 8,
     img: image8,
     name: 'Lapis Bogor',
-    price: 'Rp.80.000',
+    price: 17000,
     category: 'Food and beverage',
     description: 'Good and Healthy Food',
     stock: 0
@@ -102,7 +102,7 @@ const tileData = [
     id: 9,
     img: image9,
     name: 'Teh Madu',
-    price: 'Rp.90.000',
+    price: 18000,
     category: 'Food and beverage',
     description: 'Good and Healthy Food',
     stock: 0
@@ -111,7 +111,7 @@ const tileData = [
     id: 10,
     img: image10,
     name: 'Kopi Kenangan',
-    price: 'Rp.100.000',
+    price: 19000,
     category: 'Food and beverage',
     description: 'Good and Healthy Food',
     stock: 0
@@ -120,7 +120,7 @@ const tileData = [
     id: 11,
     img: image11,
     name: 'Ducks Steak',
-    price: 'Rp.110.000',
+    price: 20000,
     category: 'Food and beverage',
     description: 'Good and Healthy Food',
     stock: 0
@@ -129,7 +129,7 @@ const tileData = [
     id: 12,
     img: image12,
     name: 'Burger Buto',
-    price: 'Rp.120.000',
+    price: 21000,
     category: 'Food and beverage',
     description: 'Good and Healthy Food',
     stock: 0

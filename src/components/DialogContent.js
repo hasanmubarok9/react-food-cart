@@ -24,7 +24,7 @@ function ModalContent ({ productDetail, addToCart }) {
       <div>{productDetail.price}</div>
       <div>{productDetail.description}</div>
       <div>{productDetail.category}</div>
-      <Button onClick={() => { handleClick(productDetail.id) }}>
+      <Button variant="contained" color="primary" onClick={() => { handleClick(productDetail.id) }}>
         Add to Cart
       </Button>
     </DialogContent>

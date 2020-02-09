@@ -92,7 +92,6 @@ const useStyles = makeStyles(theme => ({
 }))
 
 function PrimarySearchAppBar ({ addedItems }) {
-  console.log('addedItems ', addedItems)
   const classes = useStyles()
   const [anchorEl, setAnchorEl] = React.useState(null)
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null)
@@ -134,6 +133,7 @@ function PrimarySearchAppBar ({ addedItems }) {
   const addedItemsToCart = addedItems.length ? (
     <List>{ addedItems.map(item => (
       <ListItem button key={item.id}>
+        <img src={item.img} alt={item.name} width="20" height="20"/>
         <ListItemText primary={item.name}/>
         <ListItemText primary={item.quantity}/>
       </ListItem>
@@ -157,6 +157,14 @@ function PrimarySearchAppBar ({ addedItems }) {
       onKeyDown={toggleDrawer(side, false)}
     >
       {addedItemsToCart}
+      <List>
+        <ListItem>
+          {/* <ListItemIcon>
+            <ShoppingCartIcon/>
+          </ListItemIcon> */}
+          <ListItemText>total : </ListItemText>
+        </ListItem>
+      </List>
     </div>
   )
 
