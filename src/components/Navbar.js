@@ -92,6 +92,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 function PrimarySearchAppBar ({ addedItems }) {
+  console.log('addedItems ', addedItems)
   const classes = useStyles()
   const [anchorEl, setAnchorEl] = React.useState(null)
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null)
@@ -226,7 +227,7 @@ function PrimarySearchAppBar ({ addedItems }) {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            Foodpedia panjangnya
+            Foodpedia
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>

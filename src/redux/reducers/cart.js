@@ -25,7 +25,7 @@ export default function (state = initialState, action) {
     const addedItem = state.allProducts.find(product => product.id === id)
 
     // check if the action id exists in the addedItems
-    const existedItem = state.addedItems.find(item => action.id === item.id)
+    const existedItem = state.addedItems.find(item => item.id === id)
     if (existedItem) {
       addedItem.quantity += 1
       return {
