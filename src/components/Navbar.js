@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import { fade, makeStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -15,12 +17,9 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import MoreIcon from '@material-ui/icons/MoreVert'
 import Drawer from '@material-ui/core/Drawer'
 import List from '@material-ui/core/List'
-import Divider from '@material-ui/core/Divider'
+// import Divider from '@material-ui/core/Divider'
 import ListItem from '@material-ui/core/ListItem'
-import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
-import InboxIcon from '@material-ui/icons/MoveToInbox'
-import MailIcon from '@material-ui/icons/Mail'
 
 const useStyles = makeStyles(theme => ({
   colorPrimary: {
@@ -91,7 +90,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-export default function PrimarySearchAppBar () {
+function PrimarySearchAppBar ({ addedItems }) {
   const classes = useStyles()
   const [anchorEl, setAnchorEl] = React.useState(null)
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null)
@@ -130,6 +129,21 @@ export default function PrimarySearchAppBar () {
     setState({ ...state, [side]: open })
   }
 
+  const addedItemsToCart = addedItems.length ? (
+    <List>{ addedItems.map(item => (
+      <ListItem button key={item.id}>
+        <ListItemText primary={item.name}/>
+        <ListItemText primary={item.quantity}/>
+      </ListItem>
+    ))}</List>
+  ) : (
+    <List>
+      <ListItem>
+        <ListItemText>Cart is Empty</ListItemText>
+      </ListItem>
+    </List>
+  )
+
   const sideList = side => (
     <div
       className={classes.list}
@@ -137,23 +151,7 @@ export default function PrimarySearchAppBar () {
       onClick={toggleDrawer(side, false)}
       onKeyDown={toggleDrawer(side, false)}
     >
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
+      {addedItemsToCart}
     </div>
   )
 
@@ -209,7 +207,7 @@ export default function PrimarySearchAppBar () {
   return (
     <div className={classes.grow}>
       <AppBar
-        position="fixed"
+        position="sticky"
         classes={{
           colorPrimary: classes.colorPrimary
         }}
@@ -278,3 +276,16 @@ export default function PrimarySearchAppBar () {
     </div>
   )
 }
+
+const mapStateToProps = state => {
+  const { cart } = state
+  return {
+    addedItems: cart.addedItems
+  }
+}
+
+PrimarySearchAppBar.propTypes = {
+  addedItems: PropTypes.array
+}
+
+export default connect(mapStateToProps)(PrimarySearchAppBar)

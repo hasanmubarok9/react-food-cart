@@ -1,0 +1,6 @@
+export const ADD_TO_CART = 'ADD_TO_CART'
+export const DELETE_FROM_CART = 'DELETE_FROM_CART'
+export const UPDATE_ITEM_STOCKS = 'UPDATE_ITEM_STOCKS'
+export const ADD_TODO = 'ADD_TODO'
+export const TOGGLE_TODO = 'TOGGLE_TODO'
+export const SET_FILTER = 'SET_FILTER'
